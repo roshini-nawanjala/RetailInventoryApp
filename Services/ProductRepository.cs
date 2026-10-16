@@ -8,6 +8,7 @@ namespace RetailInventoryApp.Services
         private readonly string connectionString =
             "Data Source=RetailInventory.db";
 
+        // Adds a new product to the inventory database.
         public void AddProduct(Product product)
         {
             using var connection = new SqliteConnection(connectionString);
@@ -138,6 +139,7 @@ namespace RetailInventoryApp.Services
             command.Parameters.AddWithValue("@id", productId);
 
             command.ExecuteNonQuery();
+            
         }
     }
 }
